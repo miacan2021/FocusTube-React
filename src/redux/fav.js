@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = ['video1']
+const initialState = []
 
 
 const fav = createSlice({
@@ -11,8 +11,8 @@ const fav = createSlice({
       return [...state, action.payload]
     },
     remove: (state, action) => {
-      const newList = state.filter(item => item !== action.payload)
-      return [newList]
+      const newList = state.filter(item => item.id.videoId !== action.payload)
+      return state = newList
     }
   }
 

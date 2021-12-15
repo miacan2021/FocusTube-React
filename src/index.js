@@ -10,12 +10,14 @@ import {
   } from "react-router-dom";
 import VideoPage from './VideoPage';
 import './index.css'
+import FavPage from './FavPage';
 
 ReactDOM.render(
   <Provider store={store}>
      <BrowserRouter>
      <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="fav-videos" element={<FavPage />} />
         <Route path="study" element={<VideoPage />}>
         <Route path=":videoId" element={<VideoPage />} />
         </Route>

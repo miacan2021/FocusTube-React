@@ -18,11 +18,11 @@ const Card = ({item}) => {
  
     return (
       <>
-        <div className="relative max-w-sm w-72 bg-white shadow-md rounded-3xl p-2 mx-1 my-3 cursor-pointer">
+        <div className="relative max-w-sm w-72 border border-gray-200 bg-white shadow-sm rounded-3xl p-2 mx-1 my-3 cursor-pointer hover:shadow-lg">
         <Link to={{pathname: `/study/${item.id.videoId}`}}>
         <div className="overflow-x-hidden rounded-2xl relative">
         <img className="h-36 rounded-2xl w-full object-cover" alt="thumbnails" src={item.snippet.thumbnails.high.url} />
-        <button onClick={handleFav} className="absolute right-2 top-2 bg-white rounded-full p-2 cursor-pointer group">
+        <button onClick={handleFav} className="absolute right-2 top-2 bg-white rounded-full p-2 cursor-pointer group hover:shadow-sm">
         {id.includes(item.id.videoId) ?
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:opacity-70"  viewBox="0 0 24 24" stroke="gray">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -32,7 +32,6 @@ const Card = ({item}) => {
            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
           </svg>
         }
-      
         </button>
       </div>
       <div className="mt-2 pl-2 mb-1 flex justify-between">

@@ -5,6 +5,7 @@ import { useEffect, useState} from 'react';
 import axios from "axios";
 import Card from './components/Card';
 import FavList from './components/FavList';
+import Nav from './components/Nav';
 
 function Home() {
  const [items, setItems] = useState([])
@@ -35,6 +36,8 @@ function Home() {
   }
 
   return (
+    <>
+    <Nav />
     <div className="w-screen">
       <h1 className='text-xl text-indigo-800'>Hello</h1>
     <form onSubmit={handleInput}>
@@ -45,12 +48,10 @@ function Home() {
         <Card item={item} key={item.id.videoId} />
       ))}
      </div>
-        <button className='bg-white' type="primary" onClick={() => getItems()}>add</button>
-      {/* {list}
-      <button onClick={() => dispatch(add('yay'))}>add</button>
-      <button onClick={() => dispatch(remove('yay'))}>remove</button> */}
+
      <FavList />
     </div>
+    </>
   )
 }
 

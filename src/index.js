@@ -11,11 +11,13 @@ import {
 import VideoPage from './VideoPage';
 import './index.css'
 import FavPage from './FavPage';
+import Error from './Error'
 
 ReactDOM.render(
   <Provider store={store}>
      <BrowserRouter>
      <Routes>
+      <Route path="*" element={<Error />} />
       <Route path="/" element={<Home />} />
       <Route path="fav-videos" element={<FavPage />} />
         <Route path="study" element={<VideoPage />}>

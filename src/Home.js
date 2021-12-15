@@ -4,6 +4,7 @@ import { useEffect, useState} from 'react';
 // import {add, remove} from './redux/fav'
 import axios from "axios";
 import Card from './components/Card';
+import FavList from './components/FavList';
 
 function Home() {
  const [items, setItems] = useState([])
@@ -48,7 +49,7 @@ function Home() {
       {/* {list}
       <button onClick={() => dispatch(add('yay'))}>add</button>
       <button onClick={() => dispatch(remove('yay'))}>remove</button> */}
-  
+     <FavList />
     </div>
   )
 }

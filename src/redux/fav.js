@@ -15,7 +15,6 @@ const fav = createSlice({
       return state = newList
     }
   }
-
 });
 
 export default fav.reducer;

@@ -75,7 +75,7 @@ const Nav = ({handleInput, handleNav}) => {
           <section>
             {menuOpen ?
                <div className='bg-white fixed w-full md:w-1/2 z-30 top-10 right-0 md:right-5 p-5 rounded-md shadow-md'>
-               <ul className="space-x-6 text-gray-300 flex flex-col items-center justify-center">
+               <ul className=" space-x-0 md:space-x-6 text-gray-300 flex flex-col items-center justify-center">
                <li className="block md:hidden">
                <form onSubmit={handleInput}>
                    <div className='flex flex-col items-end justify-center gap-3'>

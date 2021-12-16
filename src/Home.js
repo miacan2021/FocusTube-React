@@ -6,6 +6,7 @@ import Error from './Error';
 import FavPage from './FavPage';
 import { useSearch } from './hooks/useSearch'
 import VideoPage from './VideoPage';
+import FavList from './components/FavList';
 
 function Home() {
  const [video, setVideo] = useState()
@@ -19,7 +20,7 @@ function Home() {
   return (
     <>
     <Nav handleInput={handleInput} handleNav={handleNav} />
-    <div className="w-screen">
+    <div className=" w-10/12 mx-auto">
       {errStatus ?
       <Error />
        : nav === 'home'?
@@ -32,7 +33,8 @@ function Home() {
      <FavPage />
      : nav === 'video' ?
      <VideoPage video={video} />  
-     :console.log('not found page')
+     :
+     <FavList handleNav={handleNav} className="hidden" />
     }
     </div>
     </>

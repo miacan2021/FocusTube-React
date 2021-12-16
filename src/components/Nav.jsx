@@ -62,7 +62,7 @@ const Nav = ({handleInput, handleNav}) => {
                   <FavList handleNav={handleNav}  handleOpen={handleOpen} />
                 </div>
                  :open && list.length === 0 ?
-                  <div className='fixed top-15 right-5 z-10 w-6/12 bg-white h-40 rounded flex items-center justify-center shadow-md'>
+                  <div className='fixed top-15 right-5 z-10 w-4/12 bg-white h-40 rounded flex items-center justify-center shadow-md'>
                    <h1 className='font-mono font-thin tracking-widest'>Please add videos</h1>
                    </div>
                   :

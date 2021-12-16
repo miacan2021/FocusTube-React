@@ -13,7 +13,7 @@ const FavList = ({ handleNav,  handleOpen}) => {
         <div className="grid grid-cols-7 gap-3 items-center justify-items-center mb-5">
         {list.map((item) => (
             <React.Fragment key={item.snippet.title} >
-            <div className="col-span-2 mb-2 mt-2" onClick={() => {handleNav('video', item) 
+            <div className="col-span-2 mb-2 mt-2 cursor-pointer" onClick={() => {handleNav('video', item) 
             handleOpen()}}>
                 <img
                   alt="img"
@@ -21,7 +21,7 @@ const FavList = ({ handleNav,  handleOpen}) => {
                   className="h-16 w-full mx-auto rounded overflow-y-hidden object-center object-cover"
                 />
                 </div>
-              <div className="col-span-4" onClick={() => {handleNav('video', item)
+              <div className="col-span-4 cursor-pointer" onClick={() => {handleNav('video', item)
             handleOpen()}}>
                 <h3 className="font-mono text-navy text-md">{item.snippet.title}</h3>
               </div>

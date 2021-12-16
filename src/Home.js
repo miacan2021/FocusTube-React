@@ -6,7 +6,6 @@ import Error from './Error';
 import FavPage from './FavPage';
 import { useSearch } from './hooks/useSearch'
 import VideoPage from './VideoPage';
-import FavList from './components/FavList';
 
 function Home() {
  const [video, setVideo] = useState()

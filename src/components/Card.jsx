@@ -18,7 +18,7 @@ const Card = ({item, handleNav }) => {
       <>
         <div className="relative z-0 max-w-sm w-72 h-96 overflow-hidden border border-gray-200 bg-white shadow-sm rounded-3xl p-3 mx-1 my-3 cursor-pointer hover:shadow-lg">
         <div className="overflow-x-hidden rounded-2xl relative">
-        <div onClick={() => handleNav('video', item.id.videoId)}>
+        <div onClick={() => handleNav('video', item)}>
         <img className="h-36 rounded-2xl w-full object-cover" alt="thumbnails" src={item.snippet.thumbnails.high.url} />
         </div>
         <button onClick={handleFav} className="absolute z-50 right-2 top-2 bg-white rounded-full p-2 cursor-pointer group hover:shadow-sm">
@@ -33,7 +33,7 @@ const Card = ({item, handleNav }) => {
         }
         </button>
       </div>
-      <div onClick={() => handleNav('video', item.id.videoId)} className="mt-2 pl-2 mb-1 flex justify-around flex-col items-center">
+      <div onClick={() => handleNav('video', item)} className="mt-2 pl-2 mb-1 flex justify-around flex-col items-center">
           <p className="text-md font-semibold text-gray-900 mt-2">{item.snippet.title}</p>
           <p className="text-sm text-gray-800 mt-3">{item.snippet.description}</p>
       </div>

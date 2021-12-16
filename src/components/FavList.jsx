@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import {remove} from '../redux/fav'
 
@@ -13,7 +13,7 @@ const FavList = ({ handleNav,  handleOpen}) => {
         <div className="grid grid-cols-7 gap-1 items-center justify-items-center">
         {list.map((item) => (
             <React.Fragment key={item.snippet.title} >
-            <div className=" col-span-2 m-1" onClick={() => {handleNav('video', item.id.videoId) 
+            <div className=" col-span-2 m-1" onClick={() => {handleNav('video', item) 
             handleOpen()}}>
                 <img
                   alt="img"
@@ -21,7 +21,7 @@ const FavList = ({ handleNav,  handleOpen}) => {
                   className="h-16 w-full mx-auto rounded overflow-y-hidden object-center object-cover"
                 />
                 </div>
-              <div className="col-span-4" onClick={() => {handleNav('video', item.id.videoId)
+              <div className="col-span-4" onClick={() => {handleNav('video', item)
             handleOpen()}}>
                 <h3 className="font-semibold text-black text-md">{item.snippet.title}</h3>
               </div>

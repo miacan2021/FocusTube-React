@@ -58,7 +58,7 @@ const Nav = ({handleInput, handleNav}) => {
               <li className="relative group hidden lg:block">
                 <button onClick={handleOpen} className="focus:ring outline-none rounded-lg">Play video from fav list</button>
                 {open && list.length >= 1 ?
-                 <div className='fixed top-15 right-5 w-6/12 shadow-md'>
+                 <div className='fixed top-15 right-5 w-4/12 shadow-md'>
                   <FavList handleNav={handleNav}  handleOpen={handleOpen} />
                 </div>
                  :open && list.length === 0 ?

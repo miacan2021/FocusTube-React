@@ -30,12 +30,13 @@ function Home() {
       ))}
      </div>
      : nav === 'fav' ?
-     <FavPage />
+     <FavPage handleNav={handleNav} />
      : nav === 'video' ?
      <VideoPage video={video} />  
      :
-     <FavList handleNav={handleNav} className="hidden" />
-    }
+     <></>}
+     <div className="hidden">
+     </div>
     </div>
     </>
   )

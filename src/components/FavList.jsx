@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import {remove} from '../redux/fav'
 
 
-const FavList = ({ handleNav }) => {
+const FavList = ({ handleNav,  handleOpen}) => {
+  
     const list = useSelector(state => state.favList)
     const dispatch = useDispatch()
   
@@ -11,20 +12,18 @@ const FavList = ({ handleNav }) => {
         <div className="flex flex-wrap mt-14 justify-center bg-white rounded-sm p-2">
         <div className="grid grid-cols-7 gap-1 items-center justify-items-center">
         {list.map((item) => (
-            <React.Fragment key={item.snippet.title}>
-            <div className=" col-span-2 m-1">
-            <div onClick={() => handleNav('video', item.id.videoId)}>
+            <React.Fragment key={item.snippet.title} >
+            <div className=" col-span-2 m-1" onClick={() => {handleNav('video', item.id.videoId) 
+            handleOpen()}}>
                 <img
                   alt="img"
                   src={item.snippet.thumbnails.high.url}
                   className="h-16 w-full mx-auto rounded overflow-y-hidden object-center object-cover"
                 />
                 </div>
-              </div>
-              <div className="col-span-4">
-              <div onClick={() => handleNav('video', item.id.videoId)}>
+              <div className="col-span-4" onClick={() => {handleNav('video', item.id.videoId)
+            handleOpen()}}>
                 <h3 className="font-semibold text-black text-md">{item.snippet.title}</h3>
-                </div>
               </div>
               <div className="col-span-1 cursor-pointer">
                 <svg onClick={() => dispatch(remove(item.id.videoId))} xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:opacity-70" fill="#ffd803"  viewBox="0 0 24 24" stroke="#ffd803">
@@ -36,7 +35,7 @@ const FavList = ({ handleNav }) => {
         }
         </div>
 </div>
-     
+      
     )
 }
 

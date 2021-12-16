@@ -4,8 +4,6 @@ import FavList from './FavList';
 import { useSelector} from "react-redux";
 
 const Nav = ({handleInput, handleNav}) => {
-    // const {handleInput} = useSearch()
-
     const list = useSelector(state => state.favList)
     const [open, setOpen] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
@@ -29,7 +27,7 @@ const Nav = ({handleInput, handleNav}) => {
             <button className='text-lg font-semibold' onClick={() => handleNav('home')}>FocusTube</button>
           </section>
           <section className='hidden md:block'>
-              <form onSubmit={handleInput}>
+              <form onSubmit={search}>
                 <div className='flex justify-center items-center gap-3'>
                 <input type="text" className="bg-purple-white shadow rounded border-0 py-3 px-20 text-center" placeholder="Search..." />
               <button className="bg-white shadow w-10 h-10 rounded-full">

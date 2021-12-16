@@ -19,10 +19,10 @@ ReactDOM.render(
      <Routes>
       <Route path="*" element={<Error />} />
       <Route path="/" element={<Home />} />
-      <Route path="fav-videos" element={<FavPage />} />
+      {/* <Route path="fav-videos" element={<FavPage />} />
         <Route path="study" element={<VideoPage />}>
-        <Route path=":videoId" element={<VideoPage />} />
-        </Route>
+        <Route path=":videoId" element={<VideoPage />} /> */}
+        {/* </Route> */}
       </Routes>
       
     </BrowserRouter>

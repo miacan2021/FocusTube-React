@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import {add, remove} from '../redux/fav'
 
-const Card = ({item}) => {
+const Card = ({item, handleNav }) => {
   const list = useSelector(state => state.favList)
   const dispatch = useDispatch()
 
@@ -17,8 +17,8 @@ const Card = ({item}) => {
  
     return (
       <>
-        <div className="relative max-w-sm w-72 h-96 overflow-hidden border border-gray-200 bg-white shadow-sm rounded-3xl p-3 mx-1 my-3 cursor-pointer hover:shadow-lg">
-        <Link to={{pathname: `/study/${item.id.videoId}`}}>
+        <div className="relative max-w-sm w-72 h-96 overflow-hidden border border-gray-200 bg-white shadow-sm rounded-3xl p-3 mx-1 my-3 cursor-pointer hover:shadow-lg" onClick={() => handleNav('video', item.id.videoId)}>
+        {/* <Link to={{pathname: `/study/${item.id.videoId}`}}> */}
         <div className="overflow-x-hidden rounded-2xl relative">
         <img className="h-36 rounded-2xl w-full object-cover" alt="thumbnails" src={item.snippet.thumbnails.high.url} />
         <button onClick={handleFav} className="absolute right-2 top-2 bg-white rounded-full p-2 cursor-pointer group hover:shadow-sm">
@@ -37,7 +37,7 @@ const Card = ({item}) => {
           <p className="text-md font-semibold text-gray-900 mt-2">{item.snippet.title}</p>
           <p className="text-sm text-gray-800 mt-3">{item.snippet.description}</p>
       </div>
-      </Link>
+      {/* </Link> */}
       </div>
       </>
     )

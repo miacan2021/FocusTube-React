@@ -1,10 +1,9 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom';
 import Youtube from 'react-youtube'
-import Nav from './components/Nav';
+
 const VideoPage = ({video}) => {
     return (
-    <div className='pt-40 flex justify-center'>
+    <div className='pt-40 flex justify-center w-11/12'>
     <Youtube videoId={video}/>
     </div>
     )

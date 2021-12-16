@@ -14,9 +14,14 @@ const Nav = ({handleInput, handleNav}) => {
     const handleMenu = () => {
         setMenuOpen((prev) => !prev)
     }
-    const search = ()=>{
+    const searchMobile = ()=>{
       handleInput() 
       handleMenu()
+      handleNav('home')
+    }
+    const search =() => {
+      handleInput() 
+      handleNav('home')
     }
 
     return (
@@ -78,7 +83,7 @@ const Nav = ({handleInput, handleNav}) => {
                <div className='bg-white fixed sm:w-full md:w-1/2 z-30 top-10 right-5 p-5 rounded-md shadow-md'>
                <ul className="space-x-6 text-gray-300 flex flex-col items-center justify-center">
                <li className="block md:hidden">
-               <form onSubmit={search}>
+               <form onSubmit={searchMobile}>
                    <div className='flex flex-col items-end justify-center gap-3'>
                    <input type="text" className="bg-purple-white shadow rounded border-0 py-2 px-16" placeholder="Search..." />
                     <button className="bg-white shadow w-16 h-10 rounded-full">

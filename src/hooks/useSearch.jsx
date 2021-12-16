@@ -1,15 +1,13 @@
 import { useEffect, useState } from 'react';
 import axios from "axios";
-import { useNavigate } from 'react-router-dom'
 import { useInput } from './useInput';
 
 export const useSearch = () => {
     const [items, setItems] = useState([])
     const [errStatus, setErr] = useState(false)
-    const navigate= useNavigate();
+    const {inputVal, handleInput} = useInput()
 
     const YOUTUBE_API = process.env.REACT_APP_YOUTUBE_API
-    const {inputVal, handleInput} = useInput()
 
     useEffect(()=> {
         async function getItems() {

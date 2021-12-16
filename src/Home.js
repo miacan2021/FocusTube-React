@@ -1,5 +1,5 @@
 import './App.css';
-import { useState} from 'react';
+import { useState } from 'react';
 import Card from './components/Card';
 import Nav from './components/Nav';
 import Error from './Error';

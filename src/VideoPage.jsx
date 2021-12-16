@@ -16,17 +16,19 @@ const VideoPage = ({video}) => {
         dispatch(remove(video.id.videoId))
       }
     return (
-    <div className='pt-40 flex justify-center items-center flex- col'>
+    <div className=' pt-52 flex justify-center items-center flex-col'>
     <Youtube videoId={video.id.videoId}/>
     <button onClick={handleFav} className="rounded-full p-2 cursor-pointer hover:shadow-sm">
         {id.includes(video.id.videoId) ?
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:opacity-70" fill="#ffd803"  viewBox="0 0 24 24" stroke="#ffd803">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
+           <div className='flex items-center justify-center text-mono tracking-widest'>
+            <p className='mr-3'>Remove your favourite list?</p>
+            <svg class="w-7 h-7 border-current border-2 rounded-full" fill="#272343" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"></path></svg>           
+            </div>
            :
-           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:opacity-70" fill="none" viewBox="0 0 24 24" stroke="#bae8e8">
-           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-          </svg>
+           <div className='flex items-center justify-center text-mono tracking-widest'>
+           <p className='mr-3'>Add to your favourite list?</p>
+           <svg className="w-7 h-7 border-current border-2 rounded-full" fill="#272343" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"></path></svg>          
+           </div>
         }
         </button>
     </div>

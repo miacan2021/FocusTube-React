@@ -13,7 +13,7 @@ export const useSearch = () => {
         async function getItems() {
             setItems([])
             const keyword = `${inputVal} study with me`
-            const url = `https://www.googleapis.com/youtube/v3/search?type=video&fields=items(id,snippet(title,description,thumbnails))&part=snippet&q=${keyword}&maxResults=2&videoEmbeddable=true&key=${YOUTUBE_API}`;
+            const url = `https://www.googleapis.com/youtube/v3/search?type=video&fields=items(id,snippet(title,description,thumbnails))&part=snippet&q=${keyword}&maxResults=8&videoEmbeddable=true&key=${YOUTUBE_API}`;
             await axios(url)
             .then(res => {
             for (let item of res.data.items) {

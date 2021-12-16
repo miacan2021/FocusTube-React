@@ -19,11 +19,11 @@ const Nav = ({handleInput, handleNav}) => {
     }
    
     return (
-        <nav className="py-6 bg-white w-full fixed z-50">
+        <nav className="py-6 bg-white w-full fixed z-50 font-mono">
         <div className="flex items-center justify-between mx-auto xl:max-w-7xl lg:max-w-5xl md:max-w-3xl md:px-2 px-4">
           <section className="flex items-center text-gray-900 space-x-2">
           <svg role="img" xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24" aria-labelledby="bookOpenedIconTitle" stroke="#2d334a" strokeWidth="1" strokeLinecap="square" strokeLinejoin="miter" fill="none" color="#2d334a"><path d="M12 6s-2-2-4-2-5 2-5 2v14s3-2 5-2 4 2 4 2c1.333-1.333 2.667-2 4-2 1.333 0 3 .667 5 2V6c-2-1.333-3.667-2-5-2-1.333 0-2.667.667-4 2z"/> <path strokeLinecap="round" d="M12 6v14"/> </svg>
-            <button className='text-lg font-semibold' onClick={() => handleNav('home')}>FocusTube</button>
+            <button className='text-lg tracking-widest font-mono' onClick={() => handleNav('home')}>FocusTube</button>
           </section>
           <section className='hidden md:block'>
               <form onSubmit={handleInput}>
@@ -49,21 +49,21 @@ const Nav = ({handleInput, handleNav}) => {
             </button>
             <ul className="md:space-x-8 space-x-6 text-gray-900 hidden lg:flex">
               <li className="relative group">
-              <button onClick={() => handleNav('home')}>Home</button>
+              <button className='tracking-wider hover:text-primary' onClick={() => handleNav('home')}>Home</button>
                 <div className="w-full h-0.5 bg-transparent transition-al absolute bottom-0" />
               </li>
               <li className="relative group">
-                <button onClick={() => handleNav('fav')}>My Fav</button>
+                <button className='tracking-wider hover:text-primary' onClick={() => handleNav('fav')}>My Fav</button>
               </li>
               <li className="relative group hidden lg:block">
-                <button onClick={handleOpen} className="focus:ring outline-none rounded-lg">Play video from fav list</button>
+                <button onClick={handleOpen} className="outline-none rounded-lg tracking-wider hover:text-primary">Open fav list</button>
                 {open && list.length >= 1 ?
-                 <div className='fixed top-15 right-5 w-4/12 shadow-md'>
+                 <div className='fixed top-16 right-5 w-4/12 shadow-md max-h-96 overflow-y-scroll bg-white'>
                   <FavList handleNav={handleNav}  handleOpen={handleOpen} />
                 </div>
                  :open && list.length === 0 ?
                   <div className='fixed top-15 right-5 z-10 w-6/12 bg-white h-40 rounded flex items-center justify-center shadow-md'>
-                   <h1 className='font-mono font-thin'>Please add videos</h1>
+                   <h1 className='font-mono font-thin tracking-widest'>Please add videos</h1>
                    </div>
                   :
                   <></>
@@ -93,10 +93,10 @@ const Nav = ({handleInput, handleNav}) => {
                  </form>
                </li>
                  <li className="sm:mt-8 m-3">
-                 <button onClick={() => clickMenu('home')}>Home</button>
+                 <button className='tracking-wider hover:text-primary' onClick={() => clickMenu('home')}>Home</button>
                   </li>
                  <li className="sm:mt-8 m-3">
-                 <button onClick={() => clickMenu('fav')}>My Fav</button>
+                 <button className='tracking-wider hover:text-primary' onClick={() => clickMenu('fav')}>My Fav</button>
                  </li>
                  </ul>
                  </div>

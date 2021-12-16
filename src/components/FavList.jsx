@@ -10,7 +10,7 @@ const FavList = () => {
     const dispatch = useDispatch()
   
     return (
-        <div className="flex flex-wrap mt-12 justify-center bg-white rounded-sm p-2">
+        <div className="flex flex-wrap mt-14 justify-center bg-white rounded-sm p-2">
         <div className="grid grid-cols-7 gap-1 items-center justify-items-center">
         {list.map((item) => (
             <React.Fragment key={item.snippet.title}>

@@ -5,7 +5,7 @@ import { useInput } from './useInput';
 export const useSearch = () => {
     const [items, setItems] = useState([])
     const [errStatus, setErr] = useState(false)
-    const {inputVal, handleInput} = useInput()
+    const {inputVal, handleInput, nav, setNav} = useInput()
 
     const YOUTUBE_API = process.env.REACT_APP_YOUTUBE_API
 
@@ -29,5 +29,5 @@ export const useSearch = () => {
         getItems()
         }, [YOUTUBE_API, errStatus, inputVal])
  
-  return {items, handleInput, errStatus}
+  return {items, handleInput, errStatus, nav, setNav}
 }

@@ -9,7 +9,7 @@ const FavPage = () => {
         <>
         <div className="w-screen">
         {list.length >= 1 ?
-          <div className="flex sm:flex-col md:flex-row flex-wrap gap-3 gap-y-0 justify-start items-center pt-24">
+          <div className="flex sm:flex-col md:flex-row flex-wrap gap-3 gap-y-0 justify-center lg:justify-start items-center pt-24">
           {list.map((item) => (
             <Card item={item} key={item.id.videoId} />
           ))}

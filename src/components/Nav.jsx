@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom';
 import FavList from './FavList';
 import { useSelector} from "react-redux";
 
@@ -14,16 +13,11 @@ const Nav = ({handleInput, handleNav}) => {
     const handleMenu = () => {
         setMenuOpen((prev) => !prev)
     }
-    const searchMobile = ()=>{
-      handleInput() 
+    const clickMenu = (val) => {
       handleMenu()
-      handleNav('home')
+      handleNav(val)
     }
-    const search =() => {
-      handleInput() 
-      handleNav('home')
-    }
-
+   
     return (
         <nav className="py-6 bg-white w-full fixed z-50">
         <div className="flex items-center justify-between mx-auto xl:max-w-7xl lg:max-w-5xl md:max-w-3xl md:px-2 px-4">
@@ -32,7 +26,7 @@ const Nav = ({handleInput, handleNav}) => {
             <button className='text-lg font-semibold' onClick={() => handleNav('home')}>FocusTube</button>
           </section>
           <section className='hidden md:block'>
-              <form onSubmit={search}>
+              <form onSubmit={handleInput}>
                 <div className='flex justify-center items-center gap-3'>
                 <input type="text" className="bg-purple-white shadow rounded border-0 py-3 px-20 text-center" placeholder="Search..." />
               <button className="bg-white shadow w-10 h-10 rounded-full">
@@ -59,7 +53,7 @@ const Nav = ({handleInput, handleNav}) => {
                 <div className="w-full h-0.5 bg-transparent transition-al absolute bottom-0" />
               </li>
               <li className="relative group">
-                <button onClick={() => handleNav('fav')}>Fav</button>
+                <button onClick={() => handleNav('fav')}>My Fav</button>
               </li>
               <li className="relative group hidden lg:block">
                 <button onClick={handleOpen} className="focus:ring outline-none rounded-lg">Play video from fav list</button>
@@ -80,10 +74,10 @@ const Nav = ({handleInput, handleNav}) => {
           </div>
           <section>
             {menuOpen ?
-               <div className='bg-white fixed sm:w-full md:w-1/2 z-30 top-10 right-5 p-5 rounded-md shadow-md'>
+               <div className='bg-white fixed w-full md:w-1/2 z-30 top-10 right-0 md:right-5 p-5 rounded-md shadow-md'>
                <ul className="space-x-6 text-gray-300 flex flex-col items-center justify-center">
                <li className="block md:hidden">
-               <form onSubmit={searchMobile}>
+               <form onSubmit={handleInput}>
                    <div className='flex flex-col items-end justify-center gap-3'>
                    <input type="text" className="bg-purple-white shadow rounded border-0 py-2 px-16" placeholder="Search..." />
                     <button className="bg-white shadow w-16 h-10 rounded-full">
@@ -99,10 +93,10 @@ const Nav = ({handleInput, handleNav}) => {
                  </form>
                </li>
                  <li className="sm:mt-8 m-3">
-                   <Link to='/' className="group focus:ring outline-none rounded-lg"> Home </Link>
-                 </li>
+                 <button onClick={() => clickMenu('home')}>Home</button>
+                  </li>
                  <li className="sm:mt-8 m-3">
-                   <Link to='fav-videos' className="focus:ring outline-none rounded-lg">My fav</Link>
+                 <button onClick={() => clickMenu('fav')}>My Fav</button>
                  </li>
                  </ul>
                  </div>

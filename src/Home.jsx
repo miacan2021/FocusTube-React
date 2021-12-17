@@ -6,6 +6,7 @@ import Error from './Error';
 import FavPage from './FavPage';
 import { useSearch } from './hooks/useSearch'
 import VideoPage from './VideoPage';
+import About from './About';
 
 function Home() {
  const [video, setVideo] = useState()
@@ -32,8 +33,11 @@ function Home() {
      <FavPage handleNav={handleNav} />
      : nav === 'video' ?
      <VideoPage video={video} />  
+     :nav === 'about' ?
+      <About />
      :
-     <></>}
+     <></>
+    }
      <div className="hidden">
      </div>
     </div>

@@ -53,6 +53,10 @@ const Nav = ({handleInput, handleNav}) => {
                 <div className="w-full h-0.5 bg-transparent transition-al absolute bottom-0" />
               </li>
               <li className="relative group">
+              <button className='tracking-wider hover:text-primary' onClick={() => handleNav('about')}>About</button>
+                <div className="w-full h-0.5 bg-transparent transition-al absolute bottom-0" />
+              </li>
+              <li className="relative group">
                 <button className='tracking-wider hover:text-primary' onClick={() => handleNav('fav')}>My Fav</button>
               </li>
               <li className="relative group hidden lg:block">
@@ -94,6 +98,9 @@ const Nav = ({handleInput, handleNav}) => {
                </li>
                  <li className="sm:mt-8 m-3">
                  <button className='tracking-wider hover:text-primary' onClick={() => clickMenu('home')}>Home</button>
+                  </li>
+                 <li className="sm:mt-8 m-3">
+                 <button className='tracking-wider hover:text-primary' onClick={() => clickMenu('about')}>About</button>
                   </li>
                  <li className="sm:mt-8 m-3">
                  <button className='tracking-wider hover:text-primary' onClick={() => clickMenu('fav')}>My Fav</button>

@@ -12,7 +12,7 @@ export const useSearch = () => {
     useEffect(()=> {
         async function getItems() {
             setItems([])
-            const keyword = `${inputVal} study with me`
+            const keyword = `Study with me ${inputVal}`
             const url = `https://www.googleapis.com/youtube/v3/search?type=video&fields=items(id,snippet(title,description,thumbnails))&part=snippet&q=${keyword}&maxResults=8&videoEmbeddable=true&key=${YOUTUBE_API}`;
             await axios(url)
             .then(res => {

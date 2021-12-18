@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSetNav } from './useSetNav';
 
 export const useInput = () => {
-    const [inputVal, setInputVal] = useState('tokyo')
+    const [inputVal, setInputVal] = useState('1-HOUR')
     const {nav, setNav} = useSetNav()
 
     const handleInput = (e) => {
